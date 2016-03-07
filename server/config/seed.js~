@@ -41,7 +41,7 @@ Thing.find({}).removeAsync()
   });
 
 var Game = require('../api/game/game.model');
-var User = require('../api/user/user.model');
+
  
 Game.find({}).remove(function() {
   Game.create({

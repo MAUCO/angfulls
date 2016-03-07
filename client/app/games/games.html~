@@ -1,4 +1,18 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="col-md-12">
-This is the games view.
+  <h1>Games</h1>
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Platform</th>
+      <th>Genre</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="game in games">
+        <td>{{game.name}}</td>
+        <td>{{game.platform}}</td>
+        <td>{{game.genre}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

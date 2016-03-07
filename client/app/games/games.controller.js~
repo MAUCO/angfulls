@@ -10,16 +10,5 @@ angular.module('angfullsApp')
     .error(function(err) {
       alert('Error! Something went wrong');
     });
-
-    $scope.addNewGame = function(){
-      $http.post('/api/games', $scope.newGame)
-      .success(function(){
-        $scope.games.push($scope.newGame);
-        $scope.newGame = {};
-      })
-      .error(function(err){
-        alert('Error! Something went wrong');
-      });
-    };
   });
 

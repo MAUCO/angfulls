@@ -21,5 +21,28 @@ angular.module('angfullsApp')
         alert('Error! Something went wrong');
       });
     };
+    $scope.deleteGame = function(index){
+      $http.delete('/api/games/' + $scope.games[index]._id)
+      .success(function(){
+        $scope.games.splice(index, 1);
+      })
+      .error(function(err){
+        alert('Error! Something went wrong');
+      });
+    };
+
+    $scope.toggleEdit = function(index){
+      $scope.games[index].edit = !$scope.games[index].edit;
+    };
+
+    $scope.saveGame = function(index){
+      $http.put('/api/games/' + $scope.games[index]._id, $scope.games[index])
+      .success(function(){
+        $scope.games[index].edit = false;
+      })
+      .error(function(err){
+        alert('Error! Something went wrong');
+      });
+    };
   });
 
